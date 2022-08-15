@@ -1,9 +1,12 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# palmerpenguins <a href='https://allisonhorst.github.io/palmerpenguins'><img src='man/figures/logo.png' align="right" height="138.5" /></a>
+# palmerpenguins <a href='https://allisonhorst.github.io/palmerpenguins/'><img src='man/figures/logo.png' align="right" height="138.5" /></a>
 
 <!-- badges: start -->
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3960218.svg)](https://doi.org/10.5281/zenodo.3960218)
+[![CRAN](https://www.r-pkg.org/badges/version/palmerpenguins)](https://cran.r-project.org/package=palmerpenguins)
 
 <!-- badges: end -->
 
@@ -14,15 +17,15 @@ exploration & visualization, as an alternative to `iris`.
 
 ## Installation
 
-<!--You can install the released version of palmerpenguins from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of palmerpenguins from
+[CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("palmerpenguins")
 ```
--->
 
-You can install the development version from
-[GitHub](https://github.com/) with:
+To install the development version from [GitHub](https://github.com/)
+use:
 
 ``` r
 # install.packages("remotes")
@@ -33,9 +36,9 @@ remotes::install_github("allisonhorst/palmerpenguins")
 
 Data were collected and made available by [Dr. Kristen
 Gorman](https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php)
-and the [Palmer Station, Antarctica LTER](https://pal.lternet.edu/), a
-member of the [Long Term Ecological Research
-Network](https://lternet.edu/).
+and the [Palmer Station, Antarctica
+LTER](https://pallter.marine.rutgers.edu/), a member of the [Long Term
+Ecological Research Network](https://lternet.edu/).
 
 The palmerpenguins package contains two datasets.
 
@@ -49,7 +52,7 @@ see `?penguins` for more info:
 
 ``` r
 head(penguins)
-#> # A tibble: 6 x 8
+#> # A tibble: 6 × 8
 #>   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
 #>   <fct>   <fct>           <dbl>         <dbl>            <int>       <int> <fct>
 #> 1 Adelie  Torge…           39.1          18.7              181        3750 male 
@@ -66,19 +69,19 @@ original names as downloaded; see `?penguins_raw` for more info.
 
 ``` r
 head(penguins_raw)
-#> # A tibble: 6 x 17
-#>   studyName `Sample Number` Species Region Island Stage `Individual ID`
-#>   <chr>               <dbl> <chr>   <chr>  <chr>  <chr> <chr>          
-#> 1 PAL0708                 1 Adelie… Anvers Torge… Adul… N1A1           
-#> 2 PAL0708                 2 Adelie… Anvers Torge… Adul… N1A2           
-#> 3 PAL0708                 3 Adelie… Anvers Torge… Adul… N2A1           
-#> 4 PAL0708                 4 Adelie… Anvers Torge… Adul… N2A2           
-#> 5 PAL0708                 5 Adelie… Anvers Torge… Adul… N3A1           
-#> 6 PAL0708                 6 Adelie… Anvers Torge… Adul… N3A2           
+#> # A tibble: 6 × 17
+#>   studyName `Sample Number` Species          Region Island Stage `Individual ID`
+#>   <chr>               <dbl> <chr>            <chr>  <chr>  <chr> <chr>          
+#> 1 PAL0708                 1 Adelie Penguin … Anvers Torge… Adul… N1A1           
+#> 2 PAL0708                 2 Adelie Penguin … Anvers Torge… Adul… N1A2           
+#> 3 PAL0708                 3 Adelie Penguin … Anvers Torge… Adul… N2A1           
+#> 4 PAL0708                 4 Adelie Penguin … Anvers Torge… Adul… N2A2           
+#> 5 PAL0708                 5 Adelie Penguin … Anvers Torge… Adul… N3A1           
+#> 6 PAL0708                 6 Adelie Penguin … Anvers Torge… Adul… N3A2           
 #> # … with 10 more variables: `Clutch Completion` <chr>, `Date Egg` <date>,
-#> #   `Culmen Length (mm)` <dbl>, `Culmen Depth (mm)` <dbl>, `Flipper Length
-#> #   (mm)` <dbl>, `Body Mass (g)` <dbl>, Sex <chr>, `Delta 15 N (o/oo)` <dbl>,
-#> #   `Delta 13 C (o/oo)` <dbl>, Comments <chr>
+#> #   `Culmen Length (mm)` <dbl>, `Culmen Depth (mm)` <dbl>,
+#> #   `Flipper Length (mm)` <dbl>, `Body Mass (g)` <dbl>, Sex <chr>,
+#> #   `Delta 15 N (o/oo)` <dbl>, `Delta 13 C (o/oo)` <dbl>, Comments <chr>
 ```
 
 Both datasets contain data for 344 penguins. There are 3 different
@@ -98,7 +101,7 @@ str(penguins)
 #>  $ year             : int [1:344] 2007 2007 2007 2007 2007 2007 2007 2007 2007 2007 ...
 ```
 
-**Thank you** to Dr. Gorman, Palmer Station LTER and the LTER Network\!
+We gratefully acknowledge Palmer Station LTER and the US LTER Network.
 Special thanks to Marty Downs (Director, LTER Network Office) for help
 regarding the data license & use.
 
@@ -107,13 +110,13 @@ regarding the data license & use.
 You can find these and more code examples for exploring palmerpenguins
 in `vignette("examples")`.
 
-Penguins are fun to summarize\! For example:
+Penguins are fun to summarize! For example:
 
 ``` r
 library(tidyverse)
 penguins %>% 
   count(species)
-#> # A tibble: 3 x 2
+#> # A tibble: 3 × 2
 #>   species       n
 #>   <fct>     <int>
 #> 1 Adelie      152
@@ -122,7 +125,7 @@ penguins %>%
 penguins %>% 
   group_by(species) %>% 
   summarize(across(where(is.numeric), mean, na.rm = TRUE))
-#> # A tibble: 3 x 6
+#> # A tibble: 3 × 6
 #>   species   bill_length_mm bill_depth_mm flipper_length_mm body_mass_g  year
 #>   <fct>              <dbl>         <dbl>             <dbl>       <dbl> <dbl>
 #> 1 Adelie              38.8          18.3              190.       3701. 2008.
@@ -130,7 +133,7 @@ penguins %>%
 #> 3 Gentoo              47.5          15.0              217.       5076. 2008.
 ```
 
-Penguins are fun to visualize\! For example:
+Penguins are fun to visualize! For example:
 
 <img src="man/figures/README-mass-flipper-1.png" width="75%" style="display: block; margin: auto;" />
 
@@ -140,7 +143,7 @@ Penguins are fun to visualize\! For example:
 
 You can download palmerpenguins art (useful for teaching with the data)
 in `vignette("art")`. If you use this artwork, please cite with:
-“Artwork by @allison\_horst”.
+“Artwork by @allison_horst”.
 
 ### Meet the Palmer penguins
 
@@ -153,7 +156,7 @@ The culmen is the upper ridge of a bird’s bill. In the simplified
 `bill_length_mm` and `bill_depth_mm` to be more intuitive.
 
 For this penguin data, the culmen (bill) length and depth are measured
-as shown below (thanks Kristen Gorman for clarifying\!):
+as shown below (thanks Kristen Gorman for clarifying!):
 
 <img src="man/figures/culmen_depth.png" width="75%" style="display: block; margin: auto;" />
 
@@ -162,8 +165,8 @@ as shown below (thanks Kristen Gorman for clarifying\!):
 Data are available by
 [CC-0](https://creativecommons.org/share-your-work/public-domain/cc0/)
 license in accordance with the [Palmer Station LTER Data
-Policy](http://pal.lternet.edu/data/policies) and the [LTER Data Access
-Policy for Type I data](https://lternet.edu/data-access-policy/).
+Policy](https://pallter.marine.rutgers.edu/data/) and the [LTER Data
+Access Policy for Type I data](https://lternet.edu/data-access-policy/).
 
 ## Citation
 
@@ -176,7 +179,8 @@ citation("palmerpenguins")
 #> 
 #>   Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer
 #>   Archipelago (Antarctica) penguin data. R package version 0.1.0.
-#>   https://allisonhorst.github.io/palmerpenguins/
+#>   https://allisonhorst.github.io/palmerpenguins/. doi:
+#>   10.5281/zenodo.3960218.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
@@ -185,6 +189,7 @@ citation("palmerpenguins")
 #>     author = {Allison Marie Horst and Alison Presmanes Hill and Kristen B Gorman},
 #>     year = {2020},
 #>     note = {R package version 0.1.0},
+#>     doi = {10.5281/zenodo.3960218},
 #>     url = {https://allisonhorst.github.io/palmerpenguins/},
 #>   }
 ```
@@ -202,7 +207,7 @@ Agreement: <https://lternet.edu/data-access-policy/>.”
 
 **Data originally published in:**
 
-  - Gorman KB, Williams TD, Fraser WR (2014). Ecological sexual
+-   Gorman KB, Williams TD, Fraser WR (2014). Ecological sexual
     dimorphism and environmental variability within a community of
     Antarctic penguins (genus *Pygoscelis*). PLoS ONE 9(3):e90081.
     <https://doi.org/10.1371/journal.pone.0090081>
@@ -211,7 +216,7 @@ Agreement: <https://lternet.edu/data-access-policy/>.”
 
 Adélie penguins:
 
-  - Palmer Station Antarctica LTER and K. Gorman, 2020. Structural size
+-   Palmer Station Antarctica LTER and K. Gorman, 2020. Structural size
     measurements and isotopic signatures of foraging among adult male
     and female Adélie penguins (*Pygoscelis adeliae*) nesting along the
     Palmer Archipelago near Palmer Station, 2007-2009 ver 5.
@@ -221,7 +226,7 @@ Adélie penguins:
 
 Gentoo penguins:
 
-  - Palmer Station Antarctica LTER and K. Gorman, 2020. Structural size
+-   Palmer Station Antarctica LTER and K. Gorman, 2020. Structural size
     measurements and isotopic signatures of foraging among adult male
     and female Gentoo penguin (*Pygoscelis papua*) nesting along the
     Palmer Archipelago near Palmer Station, 2007-2009 ver 5.
@@ -231,7 +236,7 @@ Gentoo penguins:
 
 Chinstrap penguins:
 
-  - Palmer Station Antarctica LTER and K. Gorman, 2020. Structural size
+-   Palmer Station Antarctica LTER and K. Gorman, 2020. Structural size
     measurements and isotopic signatures of foraging among adult male
     and female Chinstrap penguin (*Pygoscelis antarcticus*) nesting
     along the Palmer Archipelago near Palmer Station, 2007-2009 ver 6.
